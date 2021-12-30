@@ -1,0 +1,90 @@
+.TH PASMOCO 1 "2021 October 31" "pasmoco"
+
+.SH NAME
+pasmoco - stores and retrieves passwords
+
+.SH SYNOPSIS
+.B pasmoco
+[ 
+.I COMMAND
+] [ 
+.I OPTIONS
+]...
+
+.SH DESCRIPTION
+
+.B pasmoco
+is a simple password manager which keeps each secret along with relevant metadata inside
+an encrypted file within a directory residing by default at
+.IR ~/.local/share/pasmoco .
+Password files' names are randomized, and an encrypted index file residing within said directory
+points the user towards the desired password.
+It provides a series of commands in order to allow the user to add, remove, and list passwords.
+
+COMMAND must be one of the valid commands listed below.
+
+The \fBinit\fP command must be run before other commands in order to create
+the directory where passwords and the index file will reside, as well as
+setting the password or passphrase with which files in the directory will be
+encrypted.
+
+.SH COMMANDS
+
+.TP
+\fBinit\fP
+Create secrets storage directory and index file, at
+.IR ~/.local/share/pasmoco/index,
+.TP
+\fBls\fP
+Return titles of all password entries. This command is also named \fBlist\fP and \fBshow\fP.
+.TP
+.TP
+\fBadd\fP
+Add a password file.
+.TP
+.TP
+\fBrm\fP
+Remove a password file.
+.TP
+.TP
+\fBget\fP
+Retrieve a password.
+.TP
+
+.SH FILES
+
+.TP
+.B ~/.local/share/pasmoco
+The default password storage directory.
+.TP
+.B ~/.local/share/pasmoco/index
+Encrypted CSV file containing the relation between a password file's random filename and its title.
+
+.SH ENVIRONMENT VARIABLES
+
+.TP
+.I PASMOCO
+Overrides the default password storage directory.
+.TP
+
+.SH SEE ALSO
+.BR xclip (1),
+.BR wl-clipboard (1),
+
+.SH AUTHOR
+.B pasmoco
+was written by Agustín Matías Galante Cerviño.
+
+.SH COPYING
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
