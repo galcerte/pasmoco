@@ -1,6 +1,5 @@
 # pasmoco
-**Don't use this for anything serious; incomplete as of yet**
-**Hell, it doesn't even work or compile properly yet**
+**Don't use this for anything serious; it's incomplete. It doesn't even work or compile properly yet**
 
 This is a simple password manager for GNU/Linux, inspired in part by
 [pass](https://www.passwordstore.org/).
