@@ -1,5 +1,6 @@
 # pasmoco
 **Don't use this for anything serious; incomplete as of yet**
+**Hell, it doesn't even work or compile properly yet**
 
 This is a simple password manager for GNU/Linux, inspired in part by
 [pass](https://www.passwordstore.org/).
@@ -11,16 +12,16 @@ readable code, allowing for ease of maintenance. However, `pasmoco` differs from
 but filenames are random, and an encrypted index file is used to point the user to the correct
 password. This was already done in [pwd.sh](https://github.com/drduh/pwd.sh)
 
-- Being written in C99. 
+- Being written in C99.
 
-- Delegating all encryption to Monocypher, rather than attempting to talk to GPG. Why is this? 
+- Delegating all encryption to Monocypher, rather than attempting to talk to GPG.
 
 # Functionality
 For now, I've only thought of making it do five things,
 
 - Creating the directory where passwords are stored and corresponding index file, which defaults to
 `$HOME/.local/share/pasmoco`, but the directory path can be set through the environment variable
-PASMOCO_DIR
+`PASMOCO_DIR`
 
 - Adding passwords to the directory. Each password will have metadata associated to it stored in the
 file too, with a format taken after KeePass, storing title, username, password, URL and notes about
@@ -63,13 +64,13 @@ About the second point, I'm aware there's [tpm](https://github.com/nmeum/tpm/), 
 various scripting languages. Most of them, however, have the same "flawed" defaults, in the way I
 described in the first point.
 
-My reasons to start writing my own password manager are rather nitpicky, I'll admit that much. I can
-definitely work around what I percieve to be wrong with these. But, I wanted to learn C through practice,
-by writing a useful program.
+My reasons to start writing my own password manager are rather nitpicky, I'll
+admit that much. I can definitely work around what I percieve to be wrong with
+these. But, I wanted excuses to learn C through practice, so here they are.
 
 # Compilation & Installation
 Run-time dependencies are glibc and Monocypher for now, working with additional C standard library
-implementations is planned.
+implementations is planned and should not be hard given the goals of this program.
 
 Compile-time dependencies are GCC, Make, glibc, and Monocypher. Make sure you install header files
 for glibc and Monocypher, if your distribution packages these files separately.
